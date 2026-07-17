@@ -188,10 +188,9 @@ button:focus-visible {
 }
 .hero-rainbow {
   position: absolute;
-  top: -12px;
-  left: -70px;
-  width: clamp(200px, 26vw, 360px);
-  transform: rotate(160deg);
+  top: -220px;
+  left: -190px;
+  width: clamp(260px, 32vw, 460px);
   opacity: 0.9;
   pointer-events: none;
 }
@@ -464,11 +463,11 @@ button:focus-visible {
 }
 .ap-small {
   position: absolute;
-  width: 42%;
+  width: 46%;
   aspect-ratio: 3 / 4;
 }
-.ap-one { right: 2%; top: 8%; transform: rotate(4deg); }
-.ap-two { right: 12%; bottom: 0; transform: rotate(-5deg); }
+.ap-one { right: 8%; top: 6%; transform: rotate(4deg); }
+.ap-two { right: 18%; bottom: -2%; transform: rotate(-5deg); }
 .about-copy p { margin-bottom: 1rem; color: var(--ink-soft); font-size: 1.1rem; }
 .about-copy .section-title { margin-bottom: 1rem; }
 .about-sign {
@@ -599,6 +598,27 @@ button:focus-visible {
   font-size: 1.3rem;
   color: #fff;
   margin-bottom: 0.4rem;
+}
+.foot-social { margin-top: 0.9rem; }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background: #1877f2;
+  color: #fff !important;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.social-link svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+.social-link:hover {
+  background: #3b8bf5;
+  transform: translateY(-2px);
 }
 .foot-tag {
   font-family: var(--font-display);
