@@ -644,6 +644,8 @@ button:focus-visible {
   .hero-sub { margin-inline: auto; }
   .about-inner, .programs-grid { grid-template-columns: 1fr; }
   .site-nav { display: none; }
+  .btn-header { margin-left: auto; }
+  .scroll-cue { display: none; }
 }
 
 @media (max-width: 560px) {
@@ -654,6 +656,8 @@ button:focus-visible {
   .moment[data-side="left"] .photo-card { margin-left: 6vw; }
   .moment[data-side="right"] .photo-card { margin-right: 6vw; }
   .strip-card { padding: 1.4rem 1.2rem; }
+  .hero-rainbow { top: -60px; left: -60px; width: 62vw; opacity: 1; }
+  .rainbow-anchor { width: 88vw; height: 88vw; }
 }
 
 /* ============ Reduced motion ============ */
