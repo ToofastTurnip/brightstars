@@ -586,6 +586,7 @@ button:focus-visible {
 
 /* ============ Footer ============ */
 .site-footer {
+  position: relative;
   background: #322d24;
   color: #d9d2c0;
   text-align: center;
@@ -627,6 +628,66 @@ button:focus-visible {
 }
 .foot-copy { font-size: 0.85rem; opacity: 0.65; margin-top: 1rem; }
 
+/* Built by Bee & Gold badge: idle bee mark that swaps for a
+   sparkle-trimmed credit line on hover/focus. */
+.site-footer .footer-bee {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1rem;
+}
+.bee-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #d9d2c0;
+  text-decoration: none;
+}
+.bee-badge-logo {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s ease;
+}
+.bee-badge-tip {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(4px, -50%);
+  white-space: nowrap;
+  font-family: "Playfair Display", serif;
+  font-size: 0.72rem;
+  color: #d9d2c0;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+}
+.bee-badge-tip-name { position: relative; color: var(--yellow); font-weight: 600; margin-left: 3px; }
+.bee-badge-spark {
+  position: absolute;
+  font-size: 0.55rem;
+  line-height: 1;
+  color: var(--yellow);
+  opacity: 0;
+}
+.bee-badge-spark-1 { top: -9px; left: -10px; animation-delay: 0s; }
+.bee-badge-spark-2 { top: -11px; right: 6px; animation-delay: 0.45s; }
+.bee-badge-spark-3 { bottom: -9px; right: -8px; animation-delay: 0.9s; }
+.bee-badge-spark-4 { bottom: -7px; left: 10px; animation-delay: 0.25s; }
+@keyframes bee-badge-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(90deg); }
+}
+@media (hover: hover) {
+  .bee-badge:hover .bee-badge-logo,
+  .bee-badge:focus-visible .bee-badge-logo { transform: scale(0); opacity: 0; }
+  .bee-badge:hover .bee-badge-tip,
+  .bee-badge:focus-visible .bee-badge-tip { transform: translate(0, -50%); opacity: 1; }
+  .bee-badge:hover .bee-badge-spark,
+  .bee-badge:focus-visible .bee-badge-spark { animation: bee-badge-twinkle 1.4s ease-in-out infinite; }
+}
+
 /* ============ Scroll reveal (generic) ============ */
 .reveal {
   opacity: 0;
@@ -658,11 +719,14 @@ button:focus-visible {
   .strip-card { padding: 1.4rem 1.2rem; }
   .hero-rainbow { top: -60px; left: -60px; width: 62vw; opacity: 1; }
   .rainbow-anchor { width: 88vw; height: 88vw; }
+  .site-footer .footer-bee { right: 0.75rem; bottom: 0.75rem; }
 }
 
 /* ============ Reduced motion ============ */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .bee-badge-logo, .bee-badge-tip { transition: none; }
+  .bee-badge-spark { animation: none !important; }
   .reveal, .rainbow {
     opacity: 1 !important;
     transform: none !important;
